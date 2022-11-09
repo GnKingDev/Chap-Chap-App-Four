@@ -1,21 +1,47 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HomePage from '../views/HomePage.vue'
-
+import LoadPage from '../views/LoadPage.vue'
+import ConneXion from "../views/ConneXion.vue"
+import CreateAcount from "../views/CreateAcount.vue"
+import AutrePage from '../views/AutrePage.vue'
+import MessaGes from '@/views/MessaGes.vue'
+import ConverSation from '@/views/ConverSation.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/LoadPage'
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: HomePage
+    path: '/LoadPage',
+    name: 'LoadPage',
+    component: LoadPage
   },
   {
-    path: '/message/:id',
-    component: () => import('../views/ViewMessagePage.vue')
-  }
+    path: '/ConneXion',
+    name: 'ConneXion',
+    component: ConneXion
+  },
+  {
+    path: '/CreateAcount',
+    name: 'CreateAcount',
+    component: CreateAcount
+  },
+  //a effacer apres
+  {
+    path: '/AutrePage',
+    name: 'AutrePage',
+    component:AutrePage
+  },
+  {
+    path: '/ConverSation/:index/:id/:index2',
+    name: 'ConverSation',
+    component: ConverSation
+  },
+  {
+    path: '/Messages',
+    name: 'MessaGes',
+    component:MessaGes
+  },
 ]
 
 const router = createRouter({
